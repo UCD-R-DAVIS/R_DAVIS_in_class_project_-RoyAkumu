@@ -65,3 +65,54 @@ my elephants <- c(elephant1_lb, elephant2_lb)
 
 myelephants <- c(elephant1_lb, elephant2_lb)
 which(myelephants == max(myelephants))
+
+
+weight_g <- (50, 60, 65, 82)
+
+weight_g <- c(50, 60, 65, 82)
+
+animals <- c("mouse", "rat", "dog")
+
+length(weight_g)
+
+length(animals)
+
+class(weight_g)
+
+class(animals)
+
+str(weight_g)
+
+str(animals)
+
+weight_g <- c(weight_g, 90)
+
+weight_g <- c(30, weight_g)
+
+str(weight_g)
+
+num_char <- c(1, 2, 3, "a")
+
+num_logical <- c(1, 2, 3, TRUE)
+
+char_logical <- c("a", "b", "c", TRUE)
+
+tricky <- c(1, 2, 3, "4")
+
+animals{2}
+
+animals <- {2}
+ 
+animals <- c("mouse", "rat", "dog", "cat")
+
+animals{2}
+
+animals[2]
+
+class(weight_g)
+
+class(num_char)
+
+
+getwd()
+
