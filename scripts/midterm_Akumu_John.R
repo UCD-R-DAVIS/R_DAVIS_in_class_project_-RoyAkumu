@@ -73,3 +73,16 @@ tyler_activity_laps %>%
   summarise(tyler_activity_laps, max(steps_per_minute), min(steps_per_minute), mean(steps_per_minute), median(steps_per_minute))
 
 
+
+#review
+tyler_activity_laps %>% 
+  filter(total_elapsed_time_s > 60.00) %>% 
+  filter(sport == "running") %>%
+  filter(minutes_per_mile >= 5.00 & minutes_per_mile < 10) %>% 
+  mutate(pace = case_when(minutes_per_mile < 6 ~ "fast",
+                          minutes_per_mile >= 6 & minutes_per_mile <= 8 ~ "medium",
+                          minutes_per_mile > 8 ~ "slow")) %>%
+  mutate(form = ifelse(year == 2024, 'new', 'old')) %>% 
+  group_by(pace, form) %>% 
+  summarize(mean_steps = mean(steps_per_minute)) %>% 
+  pivot_wider(id_cols = 'form', names_from = 'pace', values_from = 'mean_steps')
